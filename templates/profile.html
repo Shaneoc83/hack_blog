@@ -4,9 +4,10 @@
 
 <h2>Success!</h2>
 <p>You are logged in {{ user.email }}</p>
-{% for post in posts %}
-  {% if user.id == post.author_id %}
-    <div class="row">
+  {% for post in posts %}
+    {% if user.id ==  post.author_id %}
+        <h2>Your posts</h2>
+        <div class="row">
             <div class="ool-md-2 col-sm-3 text-center">
                 <a class="story-img" href="#"><img src="http://placehold.it/100" style="width:100px; height: 100px; background-color: #12ABB2; color: #ffffff;" class="img-circle"></a>
             </div>
@@ -24,5 +25,5 @@
         </div>
         <hr>
     {% endif %}
-{% endfor %}
+  {% endfor %}
 {% endblock %}
