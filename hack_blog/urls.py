@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^blog/(?P<id>\d+)/$', views.post_details, name="blogdetails"),
     url(r'^static/(?P<path>.*)$', static_views.serve),
     url(r'', include('accounts.urls')),
-
+    url(r'^blog/(?P<id>\d+)/edit$', views.edit_post, name="edit"),
 ]

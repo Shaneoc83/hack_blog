@@ -4,10 +4,12 @@ from .forms import UserRegistrationForm, UserLoginForm
 from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+import logging
+log = logging.getLogger(__name__)
 
 
-# Create your views here.
 def register(request):
+    log.info("Handling register %s request", request.method)
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -37,6 +39,7 @@ def profile(request):
 
 
 def login(request):
+    log.info("Handling login %s request", request.method)
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():
@@ -57,6 +60,7 @@ def login(request):
 
 
 def logout(request):
+    log.info("Handling logout %s request", request.method)
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
     return redirect(reverse('index'))
