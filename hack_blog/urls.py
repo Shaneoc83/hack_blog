@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^post/new$', views.new_post, name="new_post"),
     url(r'^post/(?P<id>\d+)/$', views.post_details, name="blogdetails"),
     url(r'^static/(?P<path>.*)$', static_views.serve),
-    url(r'', include('reusable_auth.urls')),
+    url(r'', include('accounts.urls')),
 
 ]

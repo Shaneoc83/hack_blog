@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'reusable_auth',
     'django_forms_bootstrap',
+    'accounts',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -111,5 +111,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),) #static directory at the project level
 
-AUTH_USER_MODEL = 'reusable_auth.User'
-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', 'reusable_auth.backends.EmailAuth',)
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', 'accounts.backends.EmailAuth',)
