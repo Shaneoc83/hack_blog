@@ -14,7 +14,7 @@ DATABASES['default'] = dj_database_url.parse(
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, '/../staticfiles')
 
 DEBUG = True
 ALLOWED_HOSTS = ['cryptic-cliffs-51895.herokuapp.com']
