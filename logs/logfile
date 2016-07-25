@@ -1,0 +1,9 @@
+[25/Jul/2016 13:45:42] INFO [blog.views:10] Handling post_list GET request
+[25/Jul/2016 13:45:44] WARNING [django.request:182] Not Found: /favicon.ico
+[25/Jul/2016 13:46:25] INFO [accounts.views:12] Handling register GET request
+[25/Jul/2016 13:49:16] INFO [blog.views:10] Handling post_list GET request
+[25/Jul/2016 13:49:23] INFO [accounts.views:12] Handling register GET request
+[25/Jul/2016 13:49:25] INFO [accounts.views:42] Handling login GET request
+[25/Jul/2016 13:49:27] INFO [blog.views:10] Handling post_list GET request
+[25/Jul/2016 13:49:28] INFO [blog.views:24] Handling new_post GET request
+[25/Jul/2016 13:50:45] INFO [blog.views:10] Handling post_list GET request
