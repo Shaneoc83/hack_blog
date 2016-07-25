@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Post
 from .forms import BlogPostForm
 import logging
+from django.contrib.auth.decorators import login_required
 log = logging.getLogger(__name__)
 
 
@@ -22,7 +23,7 @@ def post_details(request, id):
     post.save()
     return render(request, "postdetail.html", {'post': post})
 
-
+@login_required(login_url='/login/')
 def new_post(request):
     log.info("Handling new_post %s request", request.method)
     if request.method == "POST":
