@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^blogposts/$', views.post_list, name="blogview"),
     url(r'^$', views.post_list, name="index"),
     url(r'^post/new$', views.new_post, name="new_post"),
-    url(r'^post/(?P<id>\d+)/$', views.post_details, name="blogdetails"),
+    url(r'^blog/(?P<id>\d+)/$', views.post_details, name="blogdetails"),
     url(r'^static/(?P<path>.*)$', static_views.serve),
     url(r'', include('accounts.urls')),
 
