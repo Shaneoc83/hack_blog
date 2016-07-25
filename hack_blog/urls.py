@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'', include('accounts.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.base.MEDIA_ROOT}),
     url(r'^blog/(?P<id>\d+)/edit$', views.edit_post, name="edit"),
+    url(r'^popular/$', views.post_list_by_views, name="popular"),
 ]
