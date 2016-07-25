@@ -102,7 +102,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)  # static directory at the project level
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # static directory at the project level
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
