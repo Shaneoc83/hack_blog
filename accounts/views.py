@@ -4,7 +4,9 @@ from .forms import UserRegistrationForm, UserLoginForm
 from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 import logging
+from blog.models import Post
 log = logging.getLogger(__name__)
 
 
@@ -35,7 +37,8 @@ def register(request):
 
 @login_required(login_url='/login/')
 def profile(request):
-    return render(request, 'profile.html')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    return render(request, 'profile.html', {'posts': posts})
 
 
 def login(request):
