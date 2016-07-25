@@ -16,7 +16,9 @@
                         {% endif %}
                         <p>{{ post.content }}</p>
                         <p><button class="btn btn-default" onclick="location.href='/blogposts'">Back to Blog</button>
+                            {% if user.id == post.author_id %}
                         <button class="btn btn-default" onclick="location.href='edit'">Edit</button> </p>
+                            {% endif %}
                     <p class="details">{{ post.published_date }}  <strong>Views</strong> <p class="viewCounter">{{ post.views }}</p>  <strong>Tag </strong><p class="tags">{{ post.tag }}</p></p>
                 </div>
             </div>
