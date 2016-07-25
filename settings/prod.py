@@ -16,7 +16,6 @@ DATABASES['default'] = dj_database_url.parse(
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-ALLOWED_HOSTS = ['https://cryptic-cliffs-51895.herokuapp.com']
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+ALLOWED_HOSTS = ['cryptic-cliffs-51895.herokuapp.com']
+# SECURITY WARNING: don't run with debug turned on in production!
