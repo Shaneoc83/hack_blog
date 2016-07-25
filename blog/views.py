@@ -11,6 +11,9 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, "blogposts.html", {'posts': posts})
 
+def post_list_by_views(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-views')
+    return render(request, "blogposts.html", {'posts': posts})
 
 def post_details(request, id):
     log.info("Handling post_details %s request", request.method)
