@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Post
 from .forms import BlogPostForm
 import logging
+from django.contrib.auth.decorators import login_required
 log = logging.getLogger(__name__)
 
 
@@ -11,6 +12,9 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, "blogposts.html", {'posts': posts})
 
+def post_list_by_views(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-views')
+    return render(request, "blogposts.html", {'posts': posts})
 
 def post_details(request, id):
     log.info("Handling post_details %s request", request.method)
@@ -19,7 +23,7 @@ def post_details(request, id):
     post.save()
     return render(request, "postdetail.html", {'post': post})
 
-
+@login_required(login_url='/login/')
 def new_post(request):
     log.info("Handling new_post %s request", request.method)
     if request.method == "POST":

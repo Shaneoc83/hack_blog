@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from blog import views
 from django.contrib.staticfiles import views as static_views
+import settings.base
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,5 +27,7 @@ urlpatterns = [
     url(r'^blog/(?P<id>\d+)/$', views.post_details, name="blogdetails"),
     url(r'^static/(?P<path>.*)$', static_views.serve),
     url(r'', include('accounts.urls')),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.base.MEDIA_ROOT}),
     url(r'^blog/(?P<id>\d+)/edit$', views.edit_post, name="edit"),
+    url(r'^popular/$', views.post_list_by_views, name="popular"),
 ]

@@ -3,3 +3,5 @@
 *.pyc
 *.sqlite3
 logs/logfile
+*.jpg
+hack_blog/media/images
